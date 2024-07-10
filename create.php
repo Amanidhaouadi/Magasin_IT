@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $_POST["user"];
     $pur = $_POST["pur"];
     $war = $_POST["war"];
-
+    $cat=$_POST["cat"];
     $error = ""; 
 
     if (strlen($id) != 10 || !is_numeric($id)) {
@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($error)) {
-        $sql = "INSERT INTO produit (`assets`, `description`, `Inventory-method`, `SN`, `location`, `user`, `Purchase-Date`, `warranty`) 
-                VALUES ('$id', '$description', '$inv', '$sn', '$loc', '$user', '$pur', '$war')";
+        $sql = "INSERT INTO produit (`assets`, `description`, `Inventory-method`, `SN`, `location`, `user`, `Purchase-Date`, `warranty`,`category`) 
+                VALUES ('$id', '$description', '$inv', '$sn', '$loc', '$user', '$pur', '$war','$cat')";
 
         if ($conn->query($sql) === TRUE) {
             header("Location: index.php");
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" name="user" placeholder="User">
     <input type="date" name="pur" placeholder="Purchase Date" required>
     <input type="text" name="war" placeholder="Warranty" required>
-  
+    <input type="text" name="cat" placeholder="Category" required>
     <input type="submit" value="Ajouter" class="button button-add">
   </form>
 </div>

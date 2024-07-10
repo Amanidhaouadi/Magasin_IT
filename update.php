@@ -5,7 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
     $loc = $_POST["loc"];
     $user = $_POST["user"];
-    $sql = "UPDATE produit SET location='$loc', user='$user' WHERE assets='$id'";
+    $cat=$_POST["cat"];
+    $sql = "UPDATE produit SET location='$loc', user='$user',category='$cat' WHERE assets='$id'";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: index.php");
@@ -49,7 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="loc" id="loc" value="<?php echo $produit['location']; ?>" >
         <label for="user">User:</label>
         <input type="text" name="user" id="user" value="<?php echo $produit['user']; ?>" >
-        
+        <label for="user">Category:</label>
+        <input type="text" name="cat" id="cat" value="<?php echo $produit['category']; ?>" >
         <input type="submit" value="Modifier" class="button button-edit">
     </form>
 </div>

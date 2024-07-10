@@ -14,7 +14,7 @@ $sql = "SELECT * FROM produit WHERE
         location LIKE '%$search%' OR 
         user LIKE '%$search%' OR 
         `Purchase-Date` LIKE '%$search%' OR 
-        Warranty LIKE '%$search%'";
+        Warranty LIKE '%$search%' OR `category` LIKE '%$search%'";
 
 $result = $conn->query($sql);
 ?>
@@ -59,6 +59,7 @@ $result = $conn->query($sql);
             <th>User</th>
             <th>Purchase Date</th>
             <th>Warranty</th>
+            <th>category</th>
         </tr>
         <?php
         if ($result->num_rows > 0) {
@@ -72,6 +73,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["user"] . "</td>";
                 echo "<td>" . $row["Purchase-Date"] . "</td>";
                 echo "<td>" . $row["Warranty"] . "</td>";
+                echo "<td>" . $row["category"] . "</td>";
                 echo "<td>
                         <a href='update.php?id=" . $row["assets"] . "' class='button button-edit'>Edit</a> 
                         <a href='delete.php?id=" . $row["assets"] . "' class='button button-delete' onclick='return confirmDelete()'>Delete</a>
@@ -79,7 +81,7 @@ $result = $conn->query($sql);
                 echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='9'>Aucun produit trouvé</td></tr>";
+            echo "<tr><td colspan='10'>Aucun produit trouvé</td></tr>";
         }
         ?>
     </table>
