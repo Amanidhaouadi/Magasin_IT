@@ -17,6 +17,8 @@ $sql = "SELECT * FROM produit WHERE
         Warranty LIKE '%$search%' OR `category` LIKE '%$search%'";
 
 $result = $conn->query($sql);
+echo "<span style='color: white;'>" . $result->num_rows . " produit(s) trouvé(s)</span>";
+
 ?>
 <!DOCTYPE html>
 <html>
