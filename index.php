@@ -17,8 +17,7 @@ $sql = "SELECT * FROM produit WHERE
         Warranty LIKE '%$search%' OR `category` LIKE '%$search%'";
 
 $result = $conn->query($sql);
-echo "<span style='color: white;'>" . $result->num_rows . " produit(s) trouvé(s)</span>";
-
+echo "<span class='result-count'>" . $result->num_rows . " product(s) found</span>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +29,10 @@ echo "<span style='color: white;'>" . $result->num_rows . " produit(s) trouvé(s
         function confirmDelete() {
             return confirm("Êtes-vous sûr de vouloir supprimer ce produit ?");
         }
+
+        function confirmDeleteAll() {
+            return confirm("Êtes-vous sûr de vouloir supprimer tous les produits de la catégorie 'scrap' ?");
+        }
     </script>
 </head>
 <body>
@@ -39,18 +42,27 @@ echo "<span style='color: white;'>" . $result->num_rows . " produit(s) trouvé(s
 
 <div class="container">
 
-<div class="header">
+<nav class="navbar">
         <img src="logo.png" alt="Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="product.php">Products</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
         <form method="GET" action="" class="search-form">
-            <input type="text" name="search" class="search-input" placeholder="Search..."  value="<?php echo $search; ?>" required>
+            <input type="text" name="search" class="search-input" placeholder="Search..." value="<?php echo $search; ?>" required>
             <button type="submit" class="button-1 search-button">
-            <i class="fas fa-search"></i>
+                <i class="fas fa-search"></i>
             </button>
         </form>
-    </div>
+    </nav>
     <h1>Products List</h1>
     <a href="create.php" class="button button-add">Ajouter un produit</a>
-
+    <form method="POST" action="delete_all_scrap.php" onsubmit="return confirmDeleteAll();" style="display:inline;">
+        <button type="submit" class="button button-delete-all">Delete All Scrap</button>
+    </form>
+    
     <table>
         <tr>
             <th>Asset Number</th>
@@ -61,7 +73,7 @@ echo "<span style='color: white;'>" . $result->num_rows . " produit(s) trouvé(s
             <th>User</th>
             <th>Purchase Date</th>
             <th>Warranty</th>
-            <th>category</th>
+            <th>Category</th>
         </tr>
         <?php
         if ($result->num_rows > 0) {
