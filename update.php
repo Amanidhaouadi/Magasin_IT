@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE produit SET location='$loc', user='$user',category='$cat' WHERE assets='$id'";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: index.php");
+        header("Location: products.php");
         exit();
     } else {
         echo "Erreur : " . $sql . "<br>" . $conn->error;
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Edit a product</title>
     <script>
     function confirmSubmit() {
-      return confirm("Êtes-vous sûr de vouloir modifier ce produit ?");
+      return confirm("Are you sure you want to edit this product ?");
     }</script>
 </head>
 <body>

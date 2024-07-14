@@ -156,6 +156,16 @@ input[type='password']:focus {
 input::placeholder{
     color: black;
 }
+input[type='email'] {
+    background: #ff6666;
+    border: solid black;
+    color: black;
+    text-align: left;
+}
+input[type='email']:focus {
+    outline: none;
+    
+}
 
 .logo {
     height: 50px; /* Taille du logo */
@@ -239,7 +249,41 @@ input::placeholder{
     text-align: center; /* Centrer le texte */
 }
 
+/* Autres styles... */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items to the start (left) */
+    background-color: #98a9c1; /* Lighter color for the navbar */
+    padding: 10px 20px;
+    position: relative; /* Add position relative to control child positioning */
+}
 
+.navbar .logo {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
 .bouton-scrap {
     background: #BC002D;  /* Fond blanc */
     color: black;       /* Texte noir */
@@ -253,7 +297,7 @@ input::placeholder{
 
 .button-upload {
     padding: 8px 16px; /* Adjust padding for a smaller button */
-    width: 200px; /* Set a specific width */
+    width: 120px; /* Set a specific width */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -263,7 +307,7 @@ input::placeholder{
     display: inline-block;
     background: #BC002D; /* Fond blanc */
     color: black;       /* Texte noir */
-    margin-bottom: 20px; /* Reduced margin bottom */
+    margin-bottom: 10px; /* Reduced margin bottom */
 }
 
 .button-upload:hover {

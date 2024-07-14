@@ -1,3 +1,15 @@
+<?php
+session_start(); // Start session to access user information
+
+// Check if user is logged in
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // Redirect to login page if user is not logged in
+    header("Location: index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +29,7 @@
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><?php echo htmlspecialchars($username); ?></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -65,6 +77,7 @@
 
     <h1>welcome to home page</h1>
 </div>
+
 <footer>
         <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
     </footer>

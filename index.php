@@ -64,15 +64,6 @@ input[type="password"] {
 .button-1:hover {
     background-color: #555;
 }
-footer {
-    background-color: #d9534f; /* Light red color */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
 
     </style>
     <!-- Include Bootstrap or your preferred CSS framework -->
@@ -91,8 +82,5 @@ footer {
             <button type="submit" class="button-1">Login</button>
         </form>
     </div>
-    <footer>
-        <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
-    </footer>
 </body>
 </html>
