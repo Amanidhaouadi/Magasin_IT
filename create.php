@@ -63,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Ajouter un produit</title>
   <script type="text/javascript">
@@ -79,16 +80,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       return confirm("Êtes-vous sûr de vouloir ajouter ce produit ?");
     }
   </script>
+ 
 </head>
 <body>
-<style>.logo {
-  height: 50px;
-}</style>
-
 <div class="container">
-<img src="logo.png" alt="Logo" class="logo">
-  <h1>Ajouter un produit</h1>
+<nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+           <img src="image/logo.png" alt="logo" class="logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
 
+                        </li>
+                        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="products.php">Product List</a></li>
+              <li><a class="dropdown-item" href="scrap.php">Scrap List</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="product.php">Products Catalog</a></li>
+            </ul>
+          </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.php">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.php">contact</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="settings.php">User Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Logout</a>
+                        </li>     
+</ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+   
+  <h1>Ajouter un produit</h1>
   <form method="post" action="create.php" onsubmit="return validateForm() && confirmSubmit()">
     <input type="text" name="id" id="id" placeholder="Asset Number" required>
     <input type="text" name="description" placeholder="Description" required>
@@ -98,9 +148,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" name="user" placeholder="User">
     <input type="date" name="pur" placeholder="Purchase Date" required>
     <input type="text" name="war" placeholder="Warranty" required>
-    <input type="text" name="cat" placeholder="Category" required>
+    <input type="text" name="cat" placeholder="Status" required>
     <input type="submit" value="Ajouter" class="button button-add">
   </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>
+
 </body>
 </html>

@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             height: 50px;
         }</style>
 <div class="container">
-<img src="logo.png" alt="Logo" class="logo">
+<img src="image/logo.png" alt="Logo" class="logo">
     <h1>Edit a product</h1>
     <form method="post" action="update.php" onsubmit="return confirmSubmit()">
         <input type="hidden" name="id" value="<?php echo $produit['assets']; ?>">
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="loc" id="loc" value="<?php echo $produit['location']; ?>" >
         <label for="user">User:</label>
         <input type="text" name="user" id="user" value="<?php echo $produit['user']; ?>" >
-        <label for="user">Category:</label>
+        <label for="user">Status:</label>
         <input type="text" name="cat" id="cat" value="<?php echo $produit['category']; ?>" >
         <input type="submit" value="Modifier" class="button button-edit">
     </form>

@@ -54,6 +54,19 @@ th, td {
     padding: 10px;
     text-align: left;
 }
+footer {
+    background-color: #d9534f; /* Light red color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+p, ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
 
 /* Bouton principal */
 .button {
@@ -84,6 +97,7 @@ th, td {
 .button-add:hover {
     background: #ff6666; /* Légère variation sur survol */
 }
+
 
 /* Bouton Modifier */
 .button-edit {
@@ -126,6 +140,16 @@ input[type='date'] {
 }
 
 input[type='date']:focus {
+    outline: none;
+    
+}
+input[type='password'] {
+    background: #ff6666;
+    border: solid black;
+    color: black;
+    text-align: left;
+}
+input[type='password']:focus {
     outline: none;
     
 }
@@ -215,38 +239,38 @@ input::placeholder{
     text-align: center; /* Centrer le texte */
 }
 
-/* Autres styles... */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Align items to the start (left) */
-    background-color: #98a9c1; /* Lighter color for the navbar */
-    padding: 10px 20px;
-    position: relative; /* Add position relative to control child positioning */
+
+.bouton-scrap {
+    background: #BC002D;  /* Fond blanc */
+    color: black;       /* Texte noir */
+    margin-bottom: 20px;
+    text-decoration: none; /* Ajouter de l'espace en dessous du bouton */
 }
 
-.navbar .logo {
-    height: 50px;
+.bouton-scrap:hover {
+    background: #ff6666; /* Légère variation sur survol */
 }
 
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    color: white;
+.button-upload {
+    padding: 8px 16px; /* Adjust padding for a smaller button */
+    width: 200px; /* Set a specific width */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 14px; /* Decrease font size for a smaller button */
     text-decoration: none;
-    font-size: 16px;
+    display: inline-block;
+    background: #BC002D; /* Fond blanc */
+    color: black;       /* Texte noir */
+    margin-bottom: 20px; /* Reduced margin bottom */
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+.button-upload:hover {
+    background: #ff6666; /* Légère variation sur survol */
+}
+
+
+.button-upload:hover {
+    background: #ff6666; /* Légère variation sur survol */
 }
