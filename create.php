@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     function confirmSubmit() {
-      return confirm("Êtes-vous sûr de vouloir ajouter ce produit ?");
+      return confirm("Are you sure you want to add this product ?");
     }
   </script>
  

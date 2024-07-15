@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $produit = $result->fetch_assoc();
     } else {
-        echo "Aucun produit trouvé avec l'ID $id";
+        echo "No products found with ID $id";
         exit();
     }
 }
