@@ -65,7 +65,7 @@ function confirmDelete() {
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#"><?php echo htmlspecialchars($username); ?></</a>
 
                         </li>
                         <li class="nav-item dropdown">
@@ -103,8 +103,28 @@ function confirmDelete() {
     </nav>
     <span class='result-count'><?php echo $result->num_rows; ?> product(s) found</span>
     <h1>Products List</h1>
-    <a href="create.php" class="button button-add">Ajouter un produit</a>
-
+    <a href="create.php" class="button button-add">Add a product</a>
+    <button type="button" class="button button-add" data-bs-toggle="modal" data-bs-target="#uploadModal">
+        Delete product
+    </button>
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">delete product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <img src="image/logo.png" alt="Logo" class="logo">
+    <form action="delete.php" method="get">
+        <label for="asset_number">Asset Number:</label>
+        <input type="text" id="id" name="id" required>
+        <input type="submit" value="Delete" onclick="return confirmDelete()">
+    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <table>
         <tr>
             <th>Asset Number</th>
@@ -133,7 +153,7 @@ function confirmDelete() {
                 echo "<td>" . $row["category"] . "</td>";
                 echo "<td>
                         <a href='update.php?id=" . $row["assets"] . "' class='button button-edit'>Edit</a> 
-                        <a href='delete.php?id=" . $row["assets"] . "' class='button button-delete' onclick='return confirmDelete()'>Delete</a>
+                        
                       </td>";
                 echo "</tr>";
             }

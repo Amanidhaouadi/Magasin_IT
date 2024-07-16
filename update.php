@@ -5,18 +5,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
     $loc = $_POST["loc"];
     $user = $_POST["user"];
-    $cat=$_POST["cat"];
-    $sql = "UPDATE produit SET location='$loc', user='$user',category='$cat' WHERE assets='$id'";
+    $cat = $_POST["cat"];
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: products.php");
-        exit();
+    
+    if ($cat == 'scrap') {
+     
+        $sql = "SELECT * FROM produit WHERE assets = '$id'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            $insert_sql = "INSERT INTO scrap (assets, description, SN, `Scrap-Date`, attachement)
+                           VALUES ('" . $row['assets'] . "', '" . $row['description'] . "', '" . $row['SN'] . "', NOW(), '')";
+            if ($conn->query($insert_sql) === TRUE) {
+                // Delete the product from the product table
+                $delete_sql = "DELETE FROM produit WHERE assets = '$id'";
+                if ($conn->query($delete_sql) === TRUE) {
+                    header("Location: products.php");
+                    exit();
+                } else {
+                    echo "Error deleting product: " . $conn->error;
+                }
+            } else {
+                echo "Error inserting product into scrap list: " . $conn->error;
+            }
+        } else {
+            echo "Product not found";
+        }
     } else {
-        echo "Erreur : " . $sql . "<br>" . $conn->error;
+   
+        $sql = "UPDATE produit SET location='$loc', user='$user', category='$cat' WHERE assets='$id'";
+        if ($conn->query($sql) === TRUE) {
+            header("Location: products.php");
+            exit();
+        } else {
+            echo "Erreur : " . $sql . "<br>" . $conn->error;
+        }
     }
 } else {
     $id = $_GET["id"];
-    $sql = "SELECT * FROM produit WHERE assets=$id";
+    $sql = "SELECT * FROM produit WHERE assets='$id'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $produit = $result->fetch_assoc();
@@ -30,12 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    
     <title>Edit a product</title>
     <script>
     function confirmSubmit() {
-      return confirm("Are you sure you want to edit this product ?");
-    }</script>
+      return confirm("Are you sure you want to edit this product?");
+    }
+    </script>
 </head>
 <body>
 <style>.logo {
@@ -50,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="loc" id="loc" value="<?php echo $produit['location']; ?>" >
         <label for="user">User:</label>
         <input type="text" name="user" id="user" value="<?php echo $produit['user']; ?>" >
-        <label for="user">Status:</label>
+        <label for="cat">Status:</label>
         <input type="text" name="cat" id="cat" value="<?php echo $produit['category']; ?>" >
         <input type="submit" value="Modifier" class="button button-edit">
     </form>

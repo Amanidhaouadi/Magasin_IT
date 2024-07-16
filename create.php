@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Ajouter un produit</title>
+  <title>Add a product</title>
   <script type="text/javascript">
     function validateForm() {
       var id = document.getElementById("id").value;
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+                            <a class="nav-link active" aria-current="page" href="home.php"><?php echo htmlspecialchars($username); ?></</a>
 
                         </li>
                         <li class="nav-item dropdown">
@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </nav>
    
-  <h1>Ajouter un produit</h1>
+  <h1>Add a product</h1>
   <form method="post" action="create.php" onsubmit="return validateForm() && confirmSubmit()">
     <input type="text" name="id" id="id" placeholder="Asset Number" required>
     <input type="text" name="description" placeholder="Description" required>
