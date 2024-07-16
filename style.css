@@ -1,0 +1,320 @@
+body {
+    font-family: Arial, sans-serif;
+   background: #BC002D;/* Rouge plus clair */
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    
+}
+
+form input[type="submit"] {
+    background: #cc0000;
+    color: white;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background: #ff0000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+footer {
+    background-color: #d9534f; /* Light red color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+p, ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Bouton principal */
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size:
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    background: #BC002D; /* Fond blanc */
+    color: black;      /* Texte noir */
+}
+
+.button:hover {
+    background: #f0f0f0; /* Légère variation sur survol */
+}
+
+/* Bouton Ajouter */
+.button-add {
+    background: #BC002D;  /* Fond blanc */
+    color: black;       /* Texte noir */
+    margin-bottom: 20px; /* Ajouter de l'espace en dessous du bouton */
+}
+
+.button-add:hover {
+    background: #ff6666; /* Légère variation sur survol */
+}
+
+
+/* Bouton Modifier */
+.button-edit {
+     background: #BC002D;  /* Fond blanc */
+    color: black;       /* Texte noir */
+}
+
+.button-edit:hover {
+   background: #ff6666;
+}
+
+/* Bouton Supprimer */
+.button-delete {
+    background: #BC002D;
+    color: black;
+}
+
+.button-delete:hover {
+   background: #ff6666; 
+   
+}
+
+/* Champ de texte pour l'ID */
+input[type='text'] {
+    background: #ff6666;
+    border: solid black;
+    color: black;
+    text-align: left;
+}
+
+input[type='text']:focus {
+    outline: none;
+    
+}
+input[type='date'] {
+    background: #ff6666;
+    border: solid black;
+    color: black;
+    text-align: left;
+}
+
+input[type='date']:focus {
+    outline: none;
+    
+}
+input[type='password'] {
+    background: #ff6666;
+    border: solid black;
+    color: black;
+    text-align: left;
+}
+input[type='password']:focus {
+    outline: none;
+    
+}
+input::placeholder{
+    color: black;
+}
+input[type='email'] {
+    background: #ff6666;
+    border: solid black;
+    color: black;
+    text-align: left;
+}
+input[type='email']:focus {
+    outline: none;
+    
+}
+
+.logo {
+    height: 50px; /* Taille du logo */
+    margin-bottom: 20px; /* Espacement sous le logo */
+}
+
+/* En-tête */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header .logo {
+    height: 50px; /* Taille du logo */
+    margin-left: 20px; /* Espacement entre le logo et le formulaire de recherche */
+}
+
+/* Formulaire de recherche */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 200px;
+    padding: 10px;
+    border: black;
+    border-radius: 20px ;
+    outline: none;
+    font-size: 16px;
+    background-color: #e0f7fa; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+}
+
+.search-button {
+    padding: 10px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: #333; /* Couleur de fond du bouton */
+    cursor: pointer;
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Boutons */
+.button-1 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    background: #BC002D; /* Fond blanc */
+    color: black; /
+}
+
+.button-1:hover {
+    background: #ff6666; /* Légère variation sur survol */
+}
+/* style.css */
+
+/* Autres styles... */
+
+.result-count {
+    color: white;
+    background-color: #ff6666; /* Fond rouge dégradé */
+    padding: 10px; /* Espacement intérieur */
+    border-radius: 5px; /* Bords arrondis */
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    display: inline-block; /* Pour que le padding soit appliqué correctement */
+    margin-top: 10px; /* Espacement au-dessus */
+    text-align: center; /* Centrer le texte */
+}
+
+/* Autres styles... */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items to the start (left) */
+    background-color: #98a9c1; /* Lighter color for the navbar */
+    padding: 10px 20px;
+    position: relative; /* Add position relative to control child positioning */
+}
+
+.navbar .logo {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+.bouton-scrap {
+    background: #BC002D;  /* Fond blanc */
+    color: black;       /* Texte noir */
+    margin-bottom: 20px;
+    text-decoration: none; /* Ajouter de l'espace en dessous du bouton */
+}
+
+.bouton-scrap:hover {
+    background: #ff6666; /* Légère variation sur survol */
+}
+
+.button-upload {
+    padding: 8px 16px; /* Adjust padding for a smaller button */
+    width: 120px; /* Set a specific width */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 14px; /* Decrease font size for a smaller button */
+    text-decoration: none;
+    display: inline-block;
+    background: #BC002D; /* Fond blanc */
+    color: black;       /* Texte noir */
+    margin-bottom: 10px; /* Reduced margin bottom */
+}
+
+.button-upload:hover {
+    background: #ff6666; /* Légère variation sur survol */
+}
+
+
+.button-upload:hover {
+    background: #ff6666; /* Légère variation sur survol */
+}
