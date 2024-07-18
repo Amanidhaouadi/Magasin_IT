@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
-        /* style.css */
+      
 body {
-    background-color: #BC002D;
+    background-color: #990011;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -17,9 +17,9 @@ body {
 }
 
 .container {
-    background-color: white; /* Rouge clair */
+    background-color: white; 
     padding: 20px;
-    border-radius: 15px; /* Bords arrondis */
+    border-radius: 15px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 400px;

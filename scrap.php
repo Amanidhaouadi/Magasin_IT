@@ -14,7 +14,18 @@ $sql = "SELECT * FROM scrap WHERE
         attachement LIKE '%$search%'";
 
 $result = $conn->query($sql);
+session_start(); // Start session to access user information
+
+// Check if user is logged in
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // Redirect to login page if user is not logged in
+    header("Location: index.php");
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +91,7 @@ $result = $conn->query($sql);
     </nav>
     <span class='result-count'><?php echo $result->num_rows; ?> product(s) found</span>
     <h1>Scrap List</h1>
-    <button type="button" class="button button-upload" data-bs-toggle="modal" data-bs-target="#uploadModal">
+    <button type="button" class="button button-add" data-bs-toggle="modal" data-bs-target="#uploadModal">
         Upload Attachment
     </button>
     <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">

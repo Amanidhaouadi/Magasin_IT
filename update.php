@@ -67,9 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 </head>
 <body>
-<style>.logo {
-            height: 50px;
-        }</style>
+
 <div class="container">
 <img src="image/logo.png" alt="Logo" class="logo">
     <h1>Edit a product</h1>

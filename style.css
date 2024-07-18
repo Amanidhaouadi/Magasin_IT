@@ -1,9 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-   background: #BC002D;/* Rouge plus clair */
+   background: #990011;/* Rouge plus clair */
     color: black;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -12,6 +14,7 @@ body {
     padding: 20px;
     background: white;
     border-radius: 10px;
+    flex: 1; /* Prendre tout l'espace disponible */
 }
 
 h1, h2 {
@@ -59,8 +62,8 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
+    position:fixed;
     bottom: 0;
 }
 p, ul {

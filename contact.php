@@ -1,3 +1,14 @@
+<?php 
+session_start(); // Start session to access user information
+
+// Check if user is logged in
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // Redirect to login page if user is not logged in
+    header("Location: index.php");
+    exit();
+}?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
