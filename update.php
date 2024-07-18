@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }</style>
 <div class="container">
 <img src="image/logo.png" alt="Logo" class="logo">
+
     <h1>Edit a product</h1>
     <form method="post" action="update.php" onsubmit="return confirmSubmit()">
         <input type="hidden" name="id" value="<?php echo $produit['assets']; ?>">
