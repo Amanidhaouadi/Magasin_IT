@@ -25,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: products.php");
                     exit();
                 } else {
-                    echo "Error deleting product: " . $conn->error;
+                    $errorMessage ="Error deleting product: " . $conn->error;
                 }
             } else {
-                echo "Error inserting product into scrap list: " . $conn->error;
+                $errorMessage ="Error inserting product into scrap list: " . $conn->error;
             }
         } else {
-            echo "Product not found";
+            $errorMessage= "Product not found";
         }
     } else {
    
@@ -82,5 +82,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Modifier" class="button button-edit">
     </form>
 </div>
+<script>
+        // Function to open the modal
+        function openModal(message) {
+            document.getElementById('error-message').textContent = message;
+            $('#errorModal').modal('show');
+        }
+
+        // Check for error message from PHP
+        <?php if (!empty($errorMessage)) : ?>
+            openModal("<?php echo $errorMessage; ?>");
+        <?php endif; ?>
+    </script>
 </body>
 </html>

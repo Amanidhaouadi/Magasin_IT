@@ -92,7 +92,7 @@ if (isset($_SESSION['username'])) {
     <span class='result-count'><?php echo $result->num_rows; ?> product(s) found</span>
     <h1>Scrap List</h1>
     <button type="button" class="button button-add" data-bs-toggle="modal" data-bs-target="#uploadModal">
-        Upload Attachment
+    <i class='fas fa-file'></i> Upload Attachment
     </button>
     <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
         <div class="modal-dialog">
