@@ -49,6 +49,7 @@ if (isset($_SESSION['username'])) {
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="about.php"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="decharge.php"><i class="fas fa-info-circle"></i> Decharge</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.php"><i class="fas fa-envelope"></i> contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="settings.php"><i class="fas fa-cog"></i> User Settings</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>     
