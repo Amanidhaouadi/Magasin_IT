@@ -19,7 +19,7 @@
         .navbar {
             display: flex;
             align-items: center;
-            background-color: #333;
+            background-color: maroon;
             padding: 10px;
         }
         .navbar img {
@@ -113,6 +113,8 @@
         <a href="decharge.php">Decharge</a>
         <a href="about.php">About</a>
         <a href="contact.php">Contact</a>
+        <a href="product.php">Products Catalog</a>
+        <a href="settings.php">User Settings</a>
     </div>
     
     <div class="container">
