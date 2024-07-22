@@ -144,6 +144,15 @@
             position:fixed;
             bottom: 0;
         }
+        .frame-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1; /* Transparence pour que le contenu du formulaire soit lisible */
+            z-index: 0; /* Pour que le logo soit derrière les autres éléments */
+            pointer-events:none;
+        }
 
 
     </style>
