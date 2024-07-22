@@ -143,7 +143,11 @@
             position:fixed;
             bottom: 0;
         }
+<<<<<<< HEAD
  .frame-logo {
+=======
+        .frame-logo {
+>>>>>>> 3a0289567df69d367e861210fb0f028189bdf7cb
             position: absolute;
             top: 50%;
             left: 50%;
@@ -153,6 +157,10 @@
             pointer-events:none;
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3a0289567df69d367e861210fb0f028189bdf7cb
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
@@ -370,7 +378,13 @@
     </div>
 </div>    
 
+<<<<<<< HEAD
 
+=======
+<footer>
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
+>>>>>>> 3a0289567df69d367e861210fb0f028189bdf7cb
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
