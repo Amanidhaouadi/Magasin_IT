@@ -214,6 +214,7 @@
         </div>
     </nav>
     <div class="container-decharge" id="document-content">
+        <img src="image/logo.png" class="frame-logo" alt="logo">
         <div class="header-decharge">
             <h1> Décharge </h1>
             <div class="date-input">
