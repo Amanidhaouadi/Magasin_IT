@@ -166,9 +166,9 @@
                 <div class="equipment">
                     <label for="laptop1-model">Model:</label>
                     <input type="text" id="laptop1-model" name="laptop1_model">
-                    <label for="laptop1-asset">Asset:</label>
+                    <label for="laptop1-asset">   Asset:</label>
                     <input type="text" id="laptop1-asset" name="laptop1_asset">
-                    <label for="laptop1-sn">S/N:</label>
+                    <label for="laptop1-sn">   S/N:</label>
                     <input type="text" id="laptop1-sn" name="laptop1_sn">
                 </div>
             </div>

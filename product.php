@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Yazaki Tech Products</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,19 +16,44 @@
             margin: auto;
             overflow: hidden;
         }
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar img {
+            height: 40px; /* Adjust as necessary */
+            margin-right: 20px;
+        }
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
         .product-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
         }
         .product-cell {
             border: 1px solid #ddd;
+            border-radius: 10px;
             padding: 20px;
             text-align: center;
             vertical-align: top;
+            overflow: hidden;
         }
         .product-cell img {
             max-width: 150px;
             height: auto;
+            border-radius: 5px; /* Optional: rounded corners for images */
         }
         .product-name {
             font-size: 18px;
@@ -38,47 +63,164 @@
         .product-description {
             font-size: 14px;
         }
+        /* Additional styling for consistent image sizes */
+        .product-cell img {
+            width: 100px; /* Set desired width */
+            height: 100px; /* Set desired height */
+            object-fit: contain; /* Ensure images are not stretched */
+        }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <img src="image/logo.png" alt="logo">
+        <a href="products.php">Products List</a>
+        <a href="scrap.php">Scrap List</a>
+        <a href="decharge.php">Decharge</a>
+        <a href="about.php">About</a>
+        <a href="contact.php">Contact</a>
+    </div>
+    
     <div class="container">
         <h1>Yazaki Tech Products</h1>
         <table class="product-table">
             <tr>
                 <td class="product-cell">
-                    <img src="image/hpcopac.jpg" alt="Product 1" >
+                    <img src="image/hpcopac.jpg" alt="Product 1">
                     <div class="product-name">Computer HP COMPAQ 3120 PRO</div>
                     <div class="product-description"></div>
                 </td>
                 <td class="product-cell">
-                    <img src="path/to/image2.jpg" alt="Product 2">
-                    <div class="product-name">Product 2</div>
-                    <div class="product-description">Description for product 2</div>
+                    <img src="image/aopen.jpg" alt="Product 2">
+                    <div class="product-name">Flat screen 18.5 AOPEN</div>
+                    <div class="product-description"></div>
                 </td>
                 <td class="product-cell">
-                    <img src="path/to/image3.jpg" alt="Product 3">
-                    <div class="product-name">Product 3</div>
-                    <div class="product-description">Description for product 3</div>
+                    <img src="image/dell-opti.jpg" alt="Product 3">
+                    <div class="product-name">Computer DELL Optiplex</div>
+                    <div class="product-description"></div>
                 </td>
             </tr>
             <tr>
                 <td class="product-cell">
-                    <img src="path/to/image4.jpg" alt="Product 4">
-                    <div class="product-name">Product 4</div>
-                    <div class="product-description">Description for product 4</div>
+                    <img src="image/HP_Scanjet_G2710.jpg" alt="Product 4">
+                    <div class="product-name">HP_Scanjet_G2710</div>
+                    <div class="product-description"></div>
                 </td>
                 <td class="product-cell">
-                    <img src="path/to/image5.jpg" alt="Product 5">
-                    <div class="product-name">Product 5</div>
-                    <div class="product-description">Description for product 5</div>
+                    <img src="image/HP Procurve 1000-SX-LC Mini-GBIC.png" alt="Product 5">
+                    <div class="product-name">HP Procurve 1000-SX-LC Mini-GBIC</div>
+                    <div class="product-description"></div>
                 </td>
                 <td class="product-cell">
-                    <img src="path/to/image6.jpg" alt="Product 6">
-                    <div class="product-name">Product 6</div>
-                    <div class="product-description">Description for product 6</div>
+                    <img src="image/DELL Screen 18.5 TFT.jpg" alt="Product 6">
+                    <div class="product-name">DELL Screen 18.5 TFT</div>
+                    <div class="product-description"></div>
                 </td>
             </tr>
-            <!-- Add more rows as needed -->
+            <tr>
+                <td class="product-cell">
+                    <img src="image/Compa II 162 - 12 thermal transfer printer.png" alt="Product 7">
+                    <div class="product-name">Compa II 162 - 12 thermal transfer printer</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/Color Laser Printer HP 1025.png" alt="Product 8">
+                    <div class="product-name">Color Laser Printer HP 1025</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/Computer DELL Optilex 380 E5800 2GB 500.jpg" alt="Product 9">
+                    <div class="product-name">Computer DELL Optilex 380 E5800 2GB 500</div>
+                    <div class="product-description"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="product-cell">
+                    <img src="image/monochrome printers hp laserjet P1606dn.png" alt="Product 10">
+                    <div class="product-name">monochrome printers hp laserjet P1606dn</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/PC optiplex 390 mt widows 7 pro b210 365483.png" alt="Product 11">
+                    <div class="product-name">PC optiplex 390 mt widows 7 pro b210 365483</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/PC DELL OPTIPLEX 990 mt 13 2GB 500GB GR DVD.png" alt="Product 12">
+                    <div class="product-name">PC DELL OPTIPLEX 990 mt 13 2GB 500GB GR DVD</div>
+                    <div class="product-description"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="product-cell">
+                    <img src="image/Printer dot standars ZM400.png" alt="Product 13">
+                    <div class="product-name">Printer dot standars ZM400</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/Server Hpproliant DL360 g7 E5620 1p 4gb-r-SFF.png" alt="Product 14">
+                    <div class="product-name">Server Hpproliant DL360 g7 E5620 1p 4gb-r-SFF</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/Switch PowerDsine PD-mispan 6512 A C M Eth.png" alt="Product 15">
+                    <div class="product-name">Switch PowerDsine PD-mispan 6512</div>
+                    <div class="product-description"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="product-cell">
+                    <img src="image/LENOVO unit m910s.jpg" alt="Product 16">
+                    <div class="product-name">LENOVO unit m910s</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/LAPTOP think pad L460.jpg" alt="Product 17">
+                    <div class="product-name">LAPTOP think pad L460</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/LENOVO THINKPAD T530.jpg" alt="Product 18">
+                    <div class="product-name">LENOVO THINKPAD T530</div>
+                    <div class="product-description"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="product-cell">
+                    <img src="image/LENOVO THINK PAD (LAPTOP) X250.jpg" alt="Product 19">
+                    <div class="product-name">LENOVO THINK PAD (LAPTOP) X250</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/PC LENOVO M92P.jpg" alt="Product 20">
+                    <div class="product-name">PC LENOVO M92P</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/ZEBRA MC93P.jpg" alt="Product 21">
+                    <div class="product-name">ZEBRA MC93P</div>
+                    <div class="product-description"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="product-cell">
+                    <img src="image/LENOVO THINKPAD T530.jpg" alt="Product 22">
+                    <div class="product-name">LENOVO THINKPAD T530</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/Switch Meraki MS350.jpg" alt="Product 23">
+                    <div class="product-name">Switch Meraki MS350</div>
+                    <div class="product-description"></div>
+                </td>
+                <td class="product-cell">
+                    <img src="image/THINK CENTER M93P.jpg" alt="Product 24">
+                    <div class="product-name">THINK CENTER M93P</div>
+                    <div class="product-description"></div>
+                </td>
+            </tr>
+             <!-- Add more rows as needed -->
         </table>
     </div>
     
