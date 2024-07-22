@@ -19,7 +19,7 @@
         .navbar {
             display: flex;
             align-items: center;
-            background-color: #808080 ;
+            background-color: maroon;
             padding: 10px;
         }
         .navbar img {
