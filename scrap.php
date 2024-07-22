@@ -70,9 +70,9 @@ if (isset($_SESSION['username'])) {
                         <li class="nav-item"><a class="nav-link" href="settings.php"><i class="fas fa-cog"></i> User Settings</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>     
                     </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i> Search</button>
+                    <form method="GET" action="" class="d-flex mt-3">
+        <input type="search" name="search" class="form-control me-2"  placeholder="Search..." value="<?php echo $search; ?>" required>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>
