@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,16 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Décharge - Yazaki</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            font-size: 12px;
+         /* En-tête */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
+
+        .header .logo {
+            height: 50px; /* Taille du logo */
+            margin-left: 20px; /* Espacement entre le logo et le formulaire de recherche */
+        }
+       
+        body {
+           font-family: Arial, sans-serif;
+           background: #990011;/* Rouge plus clair */
+           color: black;
+           margin: 0;
+           padding: 0;
+           display: flex;
+           flex-direction: column;
+        }
+
         .navbar {
             margin-bottom: 20px; /* Marge en bas de la navbar pour séparer du contenu */
         }
+
         .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            flex: 1; /* Prendre tout l'espace disponible */
+        }
+
+        .container-decharge {
             max-width: 297mm; /* Largeur maximale d'une page A4 en mode paysage */
             margin: 100px auto 0; /* Ajustez la marge en haut pour compenser la hauteur de la navbar fixe */
             border: 1px solid #000;
@@ -29,20 +55,34 @@
             justify-content: space-between;
             align-items: center;
         }
+   
+        .header-decharge {
+            text-align: center;
+            margin-bottom: 20px
+        }
+
         h1 {
             text-align: center;
             flex: 2;
         }
+
         .date-input {
             flex: 1;
             text-align: right;
         }
+
         .date-input label {
             margin-right: 10px;
         }
+
         .section {
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
         }
+
         .section-title {
             font-weight: bold;
             margin-bottom: 10px;
@@ -61,6 +101,8 @@
         .equipment label {
             flex: 1;
             margin-right: 10px;
+            margin-left: 20px;
+
         }
         .equipment input[type="text"] {
             flex: 2;
@@ -91,6 +133,26 @@
         .sign{
             width: 80px;
         }
+
+        footer {
+            background-color: #d9534f; /* Light red color */
+            color: white;
+            text-align: center;
+            padding: 5px;
+            width: 100%;
+            position:fixed;
+            bottom: 0;
+        }
+ .frame-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1; /* Transparence pour que le contenu du formulaire soit lisible */
+            z-index: 0; /* Pour que le logo soit derrière les autres éléments */
+            pointer-events:none;
+        }
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
@@ -108,6 +170,7 @@
     </script>
 </head>
 <body>
+<div class="container">
     <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container-fluid">
             <img src="image/logo.png" alt="logo" class="logo">
@@ -123,12 +186,14 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="home.php"><i class="fas fa-home"></i> Home</a>
+
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-box"></i> Products</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="products.php">Product List</a></li>
                                 <li><a class="dropdown-item" href="scrap.php">Scrap List</a></li>
+                                <li><a class="drapdown-item" href="decharge.php">Decharge</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="product.php">Products Catalog</a></li>
                             </ul>
@@ -146,17 +211,19 @@
             </div>
         </div>
     </nav>
-    <div class="container" id="document-content">
-        <div class="header">
-            <h1>Décharge</h1>
+    <div class="container-decharge" id="document-content">
+        <img src="image/logo.png" class="frame-logo" alt="logo">
+        <div class="header-decharge">
+            <h1> Décharge </h1>
             <div class="date-input">
-                <label for="date">Date:</label>
+                <label for="date"> Date: </label>
                 <input type="date" id="date" name="date">
             </div>
         </div>
         <form method="post" action="">
-        <p>Je soussigné <strong>Mr/Mme/Melle:</strong> <input type="text" name="name" required>Certifie avoir reçu de la société <strong>Yazaki Automotive Products Tunisia</strong>Département IT les équipements suivants:</p>
-            
+        <p> Je soussigné <strong> Mr/Mme/Melle: </strong> <input type="text" name="name" required> Certifie avoir reçu de la société <strong> Yazaki Automotive Products Tunisia </strong> Département IT les équipements suivants: </p>
+        
+        
             <!-- Section pour Laptop/Desktop -->
             <div class="section">
                 <div class="section-title">
@@ -166,9 +233,9 @@
                 <div class="equipment">
                     <label for="laptop1-model">Model:</label>
                     <input type="text" id="laptop1-model" name="laptop1_model">
-                    <label for="laptop1-asset">Asset:</label>
+                    <label for="laptop1-asset">  Asset:</label>
                     <input type="text" id="laptop1-asset" name="laptop1_asset">
-                    <label for="laptop1-sn">S/N:</label>
+                    <label for="laptop1-sn">  S/N:</label>
                     <input type="text" id="laptop1-sn" name="laptop1_sn">
                 </div>
             </div>
@@ -299,8 +366,11 @@
         
     </div>
     <div class="button-container">
-                <button type="button" class="btn btn-red" onclick="generatePDF()">Télécharger PDF</button>
-            </div>
+        <button type="button" class="btn btn-red" onclick="generatePDF()">Télécharger PDF</button>
+    </div>
+</div>    
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
