@@ -22,12 +22,13 @@
        
         body {
            font-family: Arial, sans-serif;
-           background: #990011;/* Rouge plus clair */
-           color: black;
+           background: #f5f5f5;
+           color: #333;;
            margin: 0;
            padding: 0;
            display: flex;
            flex-direction: column;
+          
         }
 
         .navbar {
@@ -73,6 +74,7 @@
 
         .date-input label {
             margin-right: 10px;
+            font-size: 12px;
         }
 
         .section {
@@ -102,11 +104,11 @@
             flex: 1;
             margin-right: 10px;
             margin-left: 20px;
+            font-size: 12px;
 
         }
-        .equipment input[type="text"] {
-            flex: 2;
-        }
+       
+       
         .signature {
             text-align: right;
             margin-top: 20px;
@@ -143,11 +145,11 @@
             position:fixed;
             bottom: 0;
         }
-<<<<<<< HEAD
- .frame-logo {
-=======
+
+
+
         .frame-logo {
->>>>>>> 3a0289567df69d367e861210fb0f028189bdf7cb
+
             position: absolute;
             top: 50%;
             left: 50%;
@@ -157,10 +159,9 @@
             pointer-events:none;
         }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3a0289567df69d367e861210fb0f028189bdf7cb
+
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
@@ -201,7 +202,8 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="products.php">Product List</a></li>
                                 <li><a class="dropdown-item" href="scrap.php">Scrap List</a></li>
-                                <li><a class="drapdown-item" href="decharge.php">Decharge</a></li>
+                                <li><a class="dropdown-item" href="decharge.php">discharge product</a></li>
+                               
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="product.php">Products Catalog</a></li>
                             </ul>
@@ -378,13 +380,10 @@
     </div>
 </div>    
 
-<<<<<<< HEAD
 
-=======
 <footer>
     <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
 </footer>
->>>>>>> 3a0289567df69d367e861210fb0f028189bdf7cb
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>

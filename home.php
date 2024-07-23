@@ -47,7 +47,7 @@ if (isset($_SESSION['username'])) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="products.php">Product List</a></li>
                                 <li><a class="dropdown-item" href="scrap.php">Scrap List</a></li>
-                                <li class="nav-item"><a class="nav-link" href="decharge.php"><i class="fa fa-cart-arrow-down"></i> discharge product</a></li>
+                                <li><a class="dropdown-item" href="decharge.php">discharge product</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="product.php">Products Catalog</a></li>
                             </ul>

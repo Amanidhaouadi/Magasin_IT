@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-   background: #990011;/* Rouge plus clair */
-    color: black;
+    background: #f5f5f5; /* Gris très clair pour le fond */
+    color: #333; /* Couleur de texte gris foncé pour un meilleur contraste */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,9 +12,10 @@ body {
     width: 90%;
     margin: 20px auto;
     padding: 20px;
-    background: white;
+    background: #ffffff; /* Blanc pour le fond du conteneur */
     border-radius: 10px;
     flex: 1; /* Prendre tout l'espace disponible */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
 }
 
 h1, h2 {
@@ -30,43 +31,46 @@ form {
 form input, form textarea {
     padding: 10px;
     border-radius: 5px;
-    border: none;
-    
+    border: 1px solid #ccc; /* Bordure grise légère */
+    background: #ffffff; /* Blanc pour les champs de texte */
 }
 
 form input[type="submit"] {
-    background: #cc0000;
+    background: #4caf50; /* Vert doux pour le bouton de soumission */
     color: white;
     cursor: pointer;
+    border: none;
 }
 
 form input[type="submit"]:hover {
-    background: #ff0000;
+    background: #45a049; /* Vert un peu plus foncé sur survol */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #ddd; /* Bordure grise légère */
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+    background: #f9f9f9; /* Fond très léger pour les cellules */
 }
+
 footer {
-    background-color: #d9534f; /* Light red color */
+    background-color: #333; /* Gris foncé */
     color: white;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    position:fixed;
+    position: fixed;
     bottom: 0;
 }
+
 p, ul {
     font-size: 16px;
     line-height: 1.6;
@@ -80,95 +84,64 @@ p, ul {
     cursor: pointer;
     transition: background 0.3s;
     font-size: 16px;
-    font-size: 16px;
     text-decoration: none;
     display: inline-block;
-    background: #BC002D; /* Fond blanc */
-    color: black;      /* Texte noir */
+    background: #2196f3; /* Bleu doux */
+    color: white;
 }
 
 .button:hover {
-    background: #f0f0f0; /* Légère variation sur survol */
+    background: #1e88e5; /* Bleu légèrement plus foncé sur survol */
 }
 
 /* Bouton Ajouter */
 .button-add {
-    background: #BC002D;  /* Fond blanc */
-    color: black;       /* Texte noir */
-    margin-bottom: 20px; /* Ajouter de l'espace en dessous du bouton */
+    background: red; /* Bleu doux */
+    color: white;
+    margin-bottom: 20px;
 }
 
 .button-add:hover {
-    background: #ff6666; /* Légère variation sur survol */
+    background: pink; /* Bleu légèrement plus foncé sur survol */
 }
-
 
 /* Bouton Modifier */
 .button-edit {
-     background: #BC002D;  /* Fond blanc */
-    color: black;       /* Texte noir */
+    background: #ffc107; /* Jaune doux */
+    color: white;
 }
 
 .button-edit:hover {
-   background: #ff6666;
+    background: #ffc107; /* Jaune légèrement plus foncé sur survol */
 }
 
 /* Bouton Supprimer */
 .button-delete {
-    background: #BC002D;
-    color: black;
+    background: #ffb300; 
+    color: white;
 }
 
 .button-delete:hover {
-   background: #ff6666; 
-   
+    background: #ffb300;
 }
 
 /* Champ de texte pour l'ID */
-input[type='text'] {
-    background: #ff6666;
-    border: solid black;
-    color: black;
+input[type='text'], input[type='date'], input[type='password'], input[type='email'] {
+    background: #ffffff; /* Blanc pour les champs de texte */
+    border: 1px solid #ccc; /* Bordure grise légère */
+    color: #333;
     text-align: left;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-input[type='text']:focus {
+input[type='text']:focus, input[type='date']:focus, input[type='password']:focus, input[type='email']:focus {
     outline: none;
-    
-}
-input[type='date'] {
-    background: #ff6666;
-    border: solid black;
-    color: black;
-    text-align: left;
+    border-color: #2196f3; /* Bordure bleue en focus */
 }
 
-input[type='date']:focus {
-    outline: none;
-    
-}
-input[type='password'] {
-    background: #ff6666;
-    border: solid black;
-    color: black;
-    text-align: left;
-}
-input[type='password']:focus {
-    outline: none;
-    
-}
-input::placeholder{
-    color: black;
-}
-input[type='email'] {
-    background: #ff6666;
-    border: solid black;
-    color: black;
-    text-align: left;
-}
-input[type='email']:focus {
-    outline: none;
-    
+input::placeholder {
+    color: #999; /* Gris clair pour les placeholders */
 }
 
 .logo {
@@ -198,27 +171,27 @@ input[type='email']:focus {
 .search-input {
     width: 200px;
     padding: 10px;
-    border: black;
-    border-radius: 20px ;
+    border: 1px solid #ccc; /* Bordure grise légère */
+    border-radius: 20px;
     outline: none;
     font-size: 16px;
-    background-color: #e0f7fa; /* Couleur de fond */
-    color: white; /* Couleur du texte */
+    background-color: #ffffff; /* Couleur de fond blanche */
+    color: black; /* Couleur du texte */
 }
 
 .search-button {
     padding: 10px;
     border: none;
     border-radius: 0 20px 20px 0;
-    background-color: #333; /* Couleur de fond du bouton */
+    background-color: #2196f3; /* Bleu doux */
     cursor: pointer;
+    color: white;
 }
 
 .search-button img {
     width: 20px;
     height: 20px;
 }
-
 
 /* Boutons */
 .button-1 {
@@ -230,37 +203,33 @@ input[type='email']:focus {
     font-size: 16px;
     text-decoration: none;
     display: inline-block;
-    background: #BC002D; /* Fond blanc */
-    color: black; /
+    background: #2196f3; /* Bleu doux */
+    color: white;
 }
 
 .button-1:hover {
-    background: #ff6666; /* Légère variation sur survol */
+    background: #1e88e5; /* Bleu légèrement plus foncé sur survol */
 }
-/* style.css */
-
-/* Autres styles... */
 
 .result-count {
     color: white;
-    background-color: #ff6666; /* Fond rouge dégradé */
-    padding: 10px; /* Espacement intérieur */
-    border-radius: 5px; /* Bords arrondis */
-    font-size: 16px; /* Taille de la police */
-    font-weight: bold; /* Texte en gras */
-    display: inline-block; /* Pour que le padding soit appliqué correctement */
-    margin-top: 10px; /* Espacement au-dessus */
-    text-align: center; /* Centrer le texte */
+    background-color: #4caf50; /* Vert doux */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
 }
 
-/* Autres styles... */
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Align items to the start (left) */
-    background-color: #98a9c1; /* Lighter color for the navbar */
+    justify-content: space-between;
+    background-color: #2196f3; /* Bleu doux */
     padding: 10px 20px;
-    position: relative; /* Add position relative to control child positioning */
+    position: relative;
 }
 
 .navbar .logo {
@@ -288,37 +257,33 @@ input[type='email']:focus {
 .nav-links a:hover {
     text-decoration: underline;
 }
+
 .bouton-scrap {
-    background: #BC002D;  /* Fond blanc */
-    color: black;       /* Texte noir */
+    background: #ff9800; /* Orange doux */
+    color: white;
     margin-bottom: 20px;
-    text-decoration: none; /* Ajouter de l'espace en dessous du bouton */
+    text-decoration: none;
 }
 
 .bouton-scrap:hover {
-    background: #ff6666; /* Légère variation sur survol */
+    background: #fb8c00; /* Orange légèrement plus foncé sur survol */
 }
 
 .button-upload {
-    padding: 8px 16px; /* Adjust padding for a smaller button */
-    width: 120px; /* Set a specific width */
+    padding: 8px 16px;
+    width: 120px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
-    font-size: 14px; /* Decrease font size for a smaller button */
+    font-size: 14px;
     text-decoration: none;
     display: inline-block;
-    background: #BC002D; /* Fond blanc */
-    color: black;       /* Texte noir */
-    margin-bottom: 10px; /* Reduced margin bottom */
+    background: #2196f3; /* Bleu doux */
+    color: white;
+    margin-bottom: 10px;
 }
 
 .button-upload:hover {
-    background: #ff6666; /* Légère variation sur survol */
-}
-
-
-.button-upload:hover {
-    background: #ff6666; /* Légère variation sur survol */
+    background: #1e88e5; /* Bleu légèrement plus foncé sur survol */
 }
