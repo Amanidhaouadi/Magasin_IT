@@ -9,11 +9,11 @@
             background-color: #f6f8fa;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: #fff;
         }
 
         .container {
@@ -126,6 +126,15 @@
             max-width: 80%;
             line-height: 1.5;
         }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f6f8fa;
+            position: absolute;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -142,15 +151,14 @@
                 
                 <button type="submit" class="button-1">Sign In</button>
             </form>
-            
         </div>
         <div class="right">
             <h2>Yazaki</h2>
             <p>One For All, All For One!</p>
         </div>
     </div>
-    <footer class="text-center mt-5">
-    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+    </footer>
 </body>
 </html>
