@@ -13,8 +13,9 @@
     h1 {
        margin: 20px 0;
        margin-bottom: 40px;
+       font-family:Jazz LET, fantasy
     }
-
+    h2{font-family:Palatino,Serif}
     /* Flex container for the about section */
     .about-container {
         display: flex;
@@ -42,6 +43,21 @@
         background-color: #fff; /* Optional: Adds a background color to distinguish the boxes */
     }
 
+    /* Styling for images between paragraphs */
+    .about-img {
+        width:1020px;
+        height:400px;
+        
+        border-radius: 15px;
+        margin: 20px 0; /* Space around the images */
+    }
+    video{width:1030px;
+        height:400px;
+        
+        border-radius: 15px;}
+        
+        .about-section{border: 1px solid #ccc;
+            border-radius: 20px;}
     </style>
 </head>
 <body>
@@ -88,13 +104,16 @@
     <div class="about-container">
             <section class="about-section">
                 <h1>Welcome to Yazaki IT Store</h1>
-                <p style="text-align: center; margin: 0 100px 30px 100px;">At Yazaki, we are dedicated to providing top-quality tech products to our customers. Our store offers a wide range of electronic gadgets, from switchs and hubs to high-performance laptops and accessories. We believe in innovation, quality, and customer satisfaction.</p>
+                <p style="text-align: center; margin: 0 100px 30px 100px;">At Yazaki, we are dedicated to providing top-quality tech products to our customers. Our store offers a wide range of electronic gadgets, from switches and hubs to high-performance laptops and accessories. We believe in innovation, quality, and customer satisfaction.</p>
+                <video src="image/intro.mp4" controls autoplay loop muted class="about-media"></video>
+   
             </section>
          
             <div class="about-box"> 
             <section class="history-section">
                 <h2> Our History</h2>
                 <p>Yazaki was founded with the vision of bringing the best technology to the market. Over the years, we have grown to become a trusted name in the tech industry, known for our commitment to excellence and our extensive product range. Our journey has been fueled by a passion for technology and a desire to make cutting-edge products accessible to everyone.</p>
+                <img src="image/infra.png" alt="Image 2" class="about-img" title="Yazaki Infrastructure">
             </section>
             </div>
             <br>
@@ -102,6 +121,7 @@
             <section class="mission-section">
                 <h2>Our Mission</h2>
                 <p>Our mission is to enhance the lives of our customers by providing innovative and reliable tech products. We strive to be at the forefront of technology, offering products that meet the highest standards of quality and performance. Customer satisfaction is our top priority, and we are committed to delivering exceptional service and support.</p>
+                <img src="image/trav.jpg" alt="Image 3" class="about-img" title="Employees working at Yazaki">
             </section>
             </div>
             <br>
@@ -114,14 +134,15 @@
                     <li><strong>Customer Satisfaction:</strong> Our customers are at the heart of everything we do. We strive to exceed their expectations with every interaction.</li>
                     <li><strong>Integrity:</strong> We conduct our business with the utmost integrity, honesty, and transparency.</li>
                 </ul>
+                <img src="image/values.jpg" alt="Image 4" class="about-img" title="We thrive for success">
             </section>
         </div>
     </div>
 </div>
     <footer>
-        <p>&copy; 2024 Yazaki IT Store . All rights reserved.</p>
+        <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> 
