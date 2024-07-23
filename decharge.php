@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Décharge - Yazaki</title>
     <style>
@@ -107,7 +108,9 @@
             font-size: 12px;
 
         }
-       
+       label{
+        font-size: 12px;
+       }
        
         .signature {
             text-align: right;
@@ -136,15 +139,6 @@
             width: 80px;
         }
 
-        footer {
-            background-color: #d9534f; /* Light red color */
-            color: white;
-            text-align: center;
-            padding: 5px;
-            width: 100%;
-            position:fixed;
-            bottom: 0;
-        }
 
 
 
@@ -231,7 +225,8 @@
             </div>
         </div>
         <form method="post" action="">
-        <p> Je soussigné <strong> Mr/Mme/Melle: </strong> <input type="text" name="name" required> Certifie avoir reçu de la société <strong> Yazaki Automotive Products Tunisia </strong> Département IT les équipements suivants: </p>
+        <p> Je soussigné <strong> Mr/Mme/Melle: </strong> <input type="text" name="name" required> Certifie avoir reçu de la société <strong> Yazaki Automotive Products Tunisia </strong> </p>
+        <p> Département IT les équipements suivants:</p>
         
         
             <!-- Section pour Laptop/Desktop -->

@@ -18,9 +18,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
 }
 
-h1, h2 {
-    text-align: center;
-}
+
 
 form {
     display: flex;
@@ -46,29 +44,42 @@ form input[type="submit"]:hover {
     background: #45a049; /* Vert un peu plus foncé sur survol */
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-weight: 600;
+    color: #444;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ddd; /* Bordure grise légère */
+    margin: 20px 0;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
-    background: #f9f9f9; /* Fond très léger pour les cellules */
+    border-bottom: 1px solid #ddd;
 }
 
-footer {
-    background-color: #333; /* Gris foncé */
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.footer {
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
     position: fixed;
     bottom: 0;
+    width: 100%;
 }
 
 p, ul {
