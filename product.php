@@ -104,6 +104,12 @@
             text-decoration: none;
             cursor: pointer;
         }
+        footer {
+    
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
     </style>
 </head>
 <body>
@@ -268,7 +274,7 @@
             <p><strong>Specifications:</strong> <span id="modalSpecs"></span></p>
         </div>
     </div>
-    <footer class="text-center mt-5">
+    <footer >
     <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
 </footer>
     <script>
