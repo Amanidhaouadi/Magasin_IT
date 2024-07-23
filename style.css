@@ -64,7 +64,7 @@ th, td {
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
 }
 
@@ -72,15 +72,7 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+
 
 p, ul {
     font-size: 16px;
@@ -107,33 +99,33 @@ p, ul {
 
 /* Bouton Ajouter */
 .button-add {
-    background: red; /* Bleu doux */
+    background: #4CAF50; /* Bleu doux */
     color: white;
     margin-bottom: 20px;
 }
 
 .button-add:hover {
-    background: pink; /* Bleu légèrement plus foncé sur survol */
+    background: #7cd37f; /* Bleu légèrement plus foncé sur survol */
 }
 
 /* Bouton Modifier */
 .button-edit {
-    background: #ffc107; /* Jaune doux */
+    background: #4CAF50; /* Jaune doux */
     color: white;
 }
 
 .button-edit:hover {
-    background: #ffc107; /* Jaune légèrement plus foncé sur survol */
+    background: #7cd37f; /* Jaune légèrement plus foncé sur survol */
 }
 
 /* Bouton Supprimer */
 .button-delete {
-    background: #ffb300; 
+    background: red; 
     color: white;
 }
 
 .button-delete:hover {
-    background: #ffb300;
+    background: pink;
 }
 
 /* Champ de texte pour l'ID */

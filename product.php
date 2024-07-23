@@ -268,7 +268,9 @@
             <p><strong>Specifications:</strong> <span id="modalSpecs"></span></p>
         </div>
     </div>
-
+    <footer class="text-center mt-5">
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
     <script>
         function showModal(title, description, date, specs) {
             document.getElementById('modalTitle').innerText = title;

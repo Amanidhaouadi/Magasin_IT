@@ -142,7 +142,7 @@ if (isset($_SESSION['username'])) {
 </div>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
     <script src="index.js"></script>
-<footer>
+<footer class="text-center mt-5">
         <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

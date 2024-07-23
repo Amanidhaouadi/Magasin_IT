@@ -133,6 +133,9 @@ if (isset($_SESSION['username'])) {
         border-radius: 5px;
         box-sizing: border-box;
     }
+    th{
+        background:white;
+    }
 
     /* Style for the submit button */
     input[type="submit"] {
@@ -188,7 +191,7 @@ th, td {
     </form>
 </div>
 
-<footer>
+<footer class="text-center mt-5">
     <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
 </footer>
 <!-- Bootstrap Bundle with Popper JS -->

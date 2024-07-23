@@ -124,9 +124,9 @@
     </div>
 </div>    
     
-    <footer>
-        <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
-    </footer>
+<footer class="text-center mt-5">
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
         <!-- Bootstrap Bundle with Popper JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

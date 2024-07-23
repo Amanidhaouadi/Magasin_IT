@@ -149,5 +149,8 @@
             <p>One For All, All For One!</p>
         </div>
     </div>
+    <footer class="text-center mt-5">
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
 </body>
 </html>

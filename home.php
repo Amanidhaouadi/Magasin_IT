@@ -47,13 +47,13 @@ if (isset($_SESSION['username'])) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="products.php">Product List</a></li>
                                 <li><a class="dropdown-item" href="scrap.php">Scrap List</a></li>
-                                <li><a class="dropdown-item" href="decharge.php">discharge product</a></li>
+                                <li><a class="dropdown-item" href="decharge.php">Discharge Product</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="product.php">Products Catalog</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="about.php"><i class="fas fa-info-circle"></i> About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.php"><i class="fas fa-envelope"></i> contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="settings.php"><i class="fas fa-cog"></i> User Settings</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>     
                     </ul>
@@ -66,15 +66,35 @@ if (isset($_SESSION['username'])) {
         </div>
     </nav>
 
-    <h1>welcome to home page</h1>
+    <div class="content mt-5 pt-5">
+        <h1>Welcome to Yazaki Inc.</h1>
+        <p class="lead">Your trusted partner in automotive technology and innovation.</p>
+        
+        <section class="my-5">
+            <h2>About Us</h2>
+            <p>Yazaki Inc. is a global leader in automotive parts and systems, dedicated to providing innovative solutions to our customers worldwide. With over 80 years of experience, we are committed to enhancing the quality, safety, and performance of vehicles through our cutting-edge technology and superior products.</p>
+        </section>
+
+        <section class="my-5">
+            <h2>Innovation</h2>
+            <p>At Yazaki, innovation is at the heart of everything we do. Our dedicated research and development teams are constantly working to develop new technologies that drive the future of the automotive industry.</p>
+            <a href="about.php" class="btn btn-primary">Learn More</a>
+        </section>
+
+        <section class="my-5">
+            <h2>Contact Us</h2>
+            <p>Have questions or need support? Our team is here to help. Reach out to us through our contact page and we will get back to you as soon as possible.</p>
+            <a href="contact.php" class="btn btn-primary">Contact Us</a>
+        </section>
+    </div>
 </div>
 
-<footer>
-        <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
-    </footer>
+<footer class="text-center mt-5">
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
 
-    <!-- Bootstrap Bundle with Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Bundle with Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

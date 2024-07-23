@@ -151,6 +151,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" name="cat" placeholder="Status" required>
     <input type="submit" value="Ajouter" class="button button-add">
   </form>
+  <footer class="text-center mt-5">
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>
 

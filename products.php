@@ -97,7 +97,7 @@ $username = $_SESSION['username'];
     <span class='result-count'><?php echo $result->num_rows; ?> product(s) found</span>
     <h1>Products List</h1>
     <a href="create.php" class="button button-add">Add a product</a>
-    <button type="button" class="button button-add" data-bs-toggle="modal" data-bs-target="#uploadModal">
+    <button type="button" class="button button-delete" data-bs-toggle="modal" data-bs-target="#uploadModal">
         Delete product
     </button>
     <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
@@ -177,12 +177,12 @@ $username = $_SESSION['username'];
                 <!-- Message will be inserted here -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Delete</button>
             </div>
         </div>
     </div>
 </div>
-<footer>
+<footer class="text-center mt-5">
     <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
 </footer>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>

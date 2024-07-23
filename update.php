@@ -82,6 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Modifier" class="button button-edit">
     </form>
 </div>
+<footer class="text-center mt-5">
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
 <script>
         // Function to open the modal
         function openModal(message) {
