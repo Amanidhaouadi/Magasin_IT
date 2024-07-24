@@ -44,6 +44,7 @@ if (isset($_SESSION['username'])) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="products.php">Product List</a></li>
                                 <li><a class="dropdown-item" href="scrap.php">Scrap List</a></li>
+                                <li><a class="dropdown-item" href="decharge.php">Discharge Product</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="product.php">Products Catalog</a></li>
                             </ul>
@@ -61,8 +62,6 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </nav>
-
-    <h1 style="margin: 30px; margin-bottom: 40px">User Settings</h1>
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -106,6 +105,7 @@ if (isset($_SESSION['username'])) {
         $conn->close();
     }
     ?>
+    
     <style>
 
    .form-row {
@@ -152,40 +152,48 @@ if (isset($_SESSION['username'])) {
     input[type="submit"]:hover {
         background-color: #0056b3;
     }
+    
     table {
-    border: none;
-    border-collapse: collapse;
-    
-}
+        border: none;
+        border-collapse: collapse;
+        margin-top: -40px;
+    }
 
-th, td {
-    border: none;
-    padding: 5px; /* Adjust this value to reduce space within cells */
-    border: none;
-}
+    th, td {
+        border: none;
+        padding: 5px; /* Adjust this value to reduce space within cells */
+        border: none;
+    }
     
-</style>
+    </style>
+    
+    <h1 style="margin: 30px; margin-bottom: 40px">User Settings</h1>
+
     <form action="settings.php" method="post" 
           style="width: 500px; margin: 0 auto; padding: 20px; border: 1px solid #ccc;
                border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         
         <table id="tab"  >
-        <div class="form-row"> <tr>
-          <th>  <label for="username">Username:</label></th>
-           <th> <input type="text" id="username" name="username" placeholder="Enter your username" required>
-           </th>  </tr>
+        <div class="form-row"> 
+            <tr>
+                <th>  <label for="username">Username:</label></th>
+                <th> <input type="text" id="username" name="username" placeholder="Enter your username" required></th>  
+            </tr>
         </div>
-        <tr>
         <div class="form-row">
-        <th> <label for="email">Email:</label> </th>
-           <th> <input type="email" id="email" name="email" placeholder="Enter your email" required>
-           </th>  </tr>
+            <tr>
+               <th> <label for="email">Email:</label> </th>
+               <th> <input type="email" id="email" name="email" placeholder="Enter your email" required> </th>  
+            </tr>
         </div>
         
-        <tr><div class="form-row">
-            <th><label for="password">Password:</label></th>
-            <th><input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </th> </tr></div> </table>
+        <div class="form-row">
+            <tr>
+                <th><label for="password">Password:</label></th>
+                <th><input type="password" id="password" name="password" placeholder="Enter your password" required></th> 
+            </tr>
+        </div> 
+        </table>
 
         <input type="submit" value="Update"> 
     </form>
