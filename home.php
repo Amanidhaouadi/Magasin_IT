@@ -23,9 +23,46 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
+
+<style>
+    h1 {
+       margin: 20px 0;
+       margin-bottom: 40px;
+       font-family:Jazz LET, fantasy
+    }
+
+    h2{
+        margin:20px 0 10px 0;
+        font-family:Palatino,Serif;
+    }
+
+    p{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Flex container for the about section */
+    .home-container {
+        display: flex;
+        flex-direction: column; /* pour aligner*/
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px; /* Optional: Adds padding around the container */
+    }
+
+    .home-section{
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        margin: 0 20px 0 20px;
+    }
+
+
+</style>
+
+
 <body>
 <div class="container">
-<nav class="navbar bg-body-tertiary fixed-top">
+    <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container-fluid">
            <img src="image/logo.png" alt="logo" class="logo">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -65,27 +102,26 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </nav>
-
-    <div class="content mt-5 pt-5">
+    <div class="home-container">
         <h1>Welcome to Yazaki Inc.</h1>
-        <p class="lead">Your trusted partner in automotive technology and innovation.</p>
+        <p class="lead">Your trusted partner in automotive technology and innovation.</p> 
         
-        <section class="my-5">
+        <section class="home-section">
             <h2>About Us</h2>
             <p>Yazaki Inc. is a global leader in automotive parts and systems, dedicated to providing innovative solutions to our customers worldwide. With over 80 years of experience, we are committed to enhancing the quality, safety, and performance of vehicles through our cutting-edge technology and superior products.</p>
         </section>
-
-        <section class="my-5">
+        <br> 
+        <section class="home-section">
             <h2>Innovation</h2>
             <p>At Yazaki, innovation is at the heart of everything we do. Our dedicated research and development teams are constantly working to develop new technologies that drive the future of the automotive industry.</p>
             <a href="about.php" class="btn btn-primary">Learn More</a>
-        </section>
-
-        <section class="my-5">
+        </section>  
+        <br>
+        <section class="home-section">
             <h2>Contact Us</h2>
             <p>Have questions or need support? Our team is here to help. Reach out to us through our contact page and we will get back to you as soon as possible.</p>
             <a href="contact.php" class="btn btn-primary">Contact Us</a>
-        </section>
+        </section> 
     </div>
 </div>
 
