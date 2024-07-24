@@ -6,6 +6,10 @@ if (isset($_GET['search'])) {
     $search = $_GET['search'];
 }
 
+$limit = 25; // Nombre de résultats par page
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
+
 $sql = "SELECT * FROM produit WHERE 
         assets LIKE '%$search%' OR 
         description LIKE '%$search%' OR 
@@ -15,11 +19,27 @@ $sql = "SELECT * FROM produit WHERE
         user LIKE '%$search%' OR 
         `Purchase-Date` LIKE '%$search%' OR 
         Warranty LIKE '%$search%' OR 
-        category LIKE '%$search%'";
+        category LIKE '%$search%'
+        LIMIT $limit OFFSET $offset";
 
 $result = $conn->query($sql);
-session_start();
 
+$totalResultsSql = "SELECT COUNT(*) AS total FROM produit WHERE 
+        assets LIKE '%$search%' OR 
+        description LIKE '%$search%' OR 
+        `Inventory-method` LIKE '%$search%' OR 
+        SN LIKE '%$search%' OR 
+        location LIKE '%$search%' OR 
+        user LIKE '%$search%' OR 
+        `Purchase-Date` LIKE '%$search%' OR 
+        Warranty LIKE '%$search%' OR 
+        category LIKE '%$search%'";
+$totalResultsResult = $conn->query($totalResultsSql);
+$totalResultsRow = $totalResultsResult->fetch_assoc();
+$totalResults = $totalResultsRow['total'];
+$totalPages = ceil($totalResults / $limit);
+
+session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
     exit();
@@ -27,7 +47,6 @@ if (!isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +60,26 @@ $username = $_SESSION['username'];
             cursor: pointer;
             width: 50px;
             height: 50px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
         }
     </style>
     <script>
@@ -94,7 +133,7 @@ $username = $_SESSION['username'];
             </div>
         </div>
     </nav>
-    <span class='result-count'><?php echo $result->num_rows; ?> product(s) found</span>
+    <span class='result-count'><?php echo $totalResults; ?> product(s) found</span>
     <h1>Products List</h1>
     <a href="create.php" class="button button-add">Add a product</a>
     <button type="button" class="button button-delete" data-bs-toggle="modal" data-bs-target="#uploadModal">
@@ -164,6 +203,19 @@ $username = $_SESSION['username'];
         }
         ?>
     </table>
+    <div class="pagination">
+        <?php if ($page > 1): ?>
+            <a href="?page=<?php echo $page - 1; ?>&search=<?php echo $search; ?>">&laquo; Previous</a>
+        <?php endif; ?>
+        
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a href="?page=<?php echo $i; ?>&search=<?php echo $search; ?>" class="<?php echo $i == $page ? 'active' : ''; ?>"><?php echo $i; ?></a>
+        <?php endfor; ?>
+        
+        <?php if ($page < $totalPages): ?>
+            <a href="?page=<?php echo $page + 1; ?>&search=<?php echo $search; ?>">Next &raquo;</a>
+        <?php endif; ?>
+    </div>
 </div>
 <!-- Modal for Alert -->
 <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">

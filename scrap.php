@@ -6,14 +6,31 @@ if (isset($_GET['search'])) {
     $search = $_GET['search'];
 }
 
+$limit = 25; // Nombre de résultats par page
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
+
 $sql = "SELECT * FROM scrap WHERE 
         assets LIKE '%$search%' OR 
         description LIKE '%$search%' OR 
         SN LIKE '%$search%' OR 
         `Scrap-Date` LIKE '%$search%' OR 
-        attachement LIKE '%$search%'";
+        attachement LIKE '%$search%'
+        LIMIT $limit OFFSET $offset";
 
 $result = $conn->query($sql);
+
+$totalResultsSql = "SELECT COUNT(*) AS total FROM scrap WHERE 
+        assets LIKE '%$search%' OR 
+        description LIKE '%$search%' OR 
+        SN LIKE '%$search%' OR 
+        `Scrap-Date` LIKE '%$search%' OR 
+        attachement LIKE '%$search%'";
+$totalResultsResult = $conn->query($totalResultsSql);
+$totalResultsRow = $totalResultsResult->fetch_assoc();
+$totalResults = $totalResultsRow['total'];
+$totalPages = ceil($totalResults / $limit);
+
 session_start(); // Start session to access user information
 
 // Check if user is logged in
@@ -25,17 +42,38 @@ if (isset($_SESSION['username'])) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="button.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazain Yazaki IT</title>
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -54,7 +92,6 @@ if (isset($_SESSION['username'])) {
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="home.php"><i class="fas fa-home"></i> Home</a>
-
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-box"></i> Products</a>
@@ -72,29 +109,29 @@ if (isset($_SESSION['username'])) {
                         <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>     
                     </ul>
                     <form method="GET" action="" class="d-flex mt-3">
-        <input type="search" name="search" class="form-control me-2"  placeholder="Search..." value="<?php echo $search; ?>" required>
+                        <input type="search" name="search" class="form-control me-2"  placeholder="Search..." value="<?php echo $search; ?>" required>
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>
         </div>
     </nav>
-    <span class='result-count'><?php echo $result->num_rows; ?> product(s) found</span>
+    <span class='result-count'><?php echo $totalResults; ?> product(s) found</span>
     <h1>Scrap List</h1>
     <button type="button" class="button button-add" data-bs-toggle="modal" data-bs-target="#uploadModal">
-    <i class='fas fa-file'></i> Upload Attachment
+        <i class='fas fa-file'></i> Upload Attachement
     </button>
     <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="uploadModalLabel">Upload Attachment</h5>
+                    <h5 class="modal-title" id="uploadModalLabel">Upload Attachement</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="upload.php" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 10px;">
-                        <label for="asset">Asset Number:</label>
-                        <input type="text" id="asset" name="asset" required style="width: 100%; padding: 8px;">
+                        <label for="Scrap-Date">Scrap Date:</label>
+                        <input type="text" id="Scrap-Date" name="Scrap-Date" required style="width: 100%; padding: 8px;">
                         <label for="fileToUpload">Choose File:</label>
                         <input type="file" name="fileToUpload" id="fileToUpload" required style="width: 100%; padding: 8px;">
                         <button type="submit" class="button" style="padding: 8px 16px;">Upload</button>
@@ -110,7 +147,7 @@ if (isset($_SESSION['username'])) {
             <th>Description</th>
             <th>Serial Number</th>
             <th>Scrap Date</th>
-            <th>Attachment</th>
+            <th>Attachement</th>
             <th>Actions</th>
         </tr>
         <?php
@@ -125,11 +162,10 @@ if (isset($_SESSION['username'])) {
                 if (!empty($row["attachement"])) {
                     echo "<a href='download.php?file=" . urlencode($row["attachement"]) . "' class='button button-download' download>Download</a>";
                 } else {
-                    echo "No attachment";
+                    echo "No attachement";
                 }
                 echo "</td>";
                 echo "<td>
-              
                         <a href='delete.php?id=" . $row["assets"] . "' class='button button-delete' onclick='return confirmDelete()'>Delete</a>
                       </td>";
                 echo "</tr>";
@@ -139,19 +175,31 @@ if (isset($_SESSION['username'])) {
         }
         ?>
     </table>
+    <div class="pagination">
+        <?php if ($page > 1): ?>
+            <a href="?page=<?php echo $page - 1; ?>&search=<?php echo $search; ?>">&laquo; Previous</a>
+        <?php endif; ?>
+        
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a href="?page=<?php echo $i; ?>&search=<?php echo $search; ?>" class="<?php echo $i == $page ? 'active' : ''; ?>"><?php echo $i; ?></a>
+        <?php endfor; ?>
+        
+        <?php if ($page < $totalPages): ?>
+            <a href="?page=<?php echo $page + 1; ?>&search=<?php echo $search; ?>">Next &raquo;</a>
+        <?php endif; ?>
+    </div>
 </div>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <script src="index.js"></script>
+<script src="index.js"></script>
 <footer class="text-center mt-5">
-        <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+    <p>&copy; 2024 Yazaki IT Store. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
 function confirmDelete() {
     return confirm("Are you sure you want to delete this item?");
 }
 </script>
-
 </body>
 </html>
