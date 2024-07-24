@@ -84,6 +84,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="products.php">Product List</a></li>
                                 <li><a class="dropdown-item" href="scrap.php">Scrap List</a></li>
+                                <li><a class="dropdown-item" href="decharge.php">Discharge Product</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="product.php">Products Catalog</a></li>
                             </ul>
