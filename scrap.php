@@ -110,7 +110,7 @@ if (isset($_SESSION['username'])) {
                     </ul>
                     <form method="GET" action="" class="d-flex mt-3">
                         <input type="search" name="search" class="form-control me-2"  placeholder="Search..." value="<?php echo $search; ?>" required>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i> Search</button>
                     </form>
                 </div>
             </div>
